@@ -4,6 +4,7 @@ import { Tab, TabsBar, Icon, IconName } from '@grafana/ui';
 import appEvents from 'app/core/app_events';
 import { NavModel, NavModelItem, NavModelBreadcrumb } from '@grafana/data';
 import { CoreEvents } from 'app/types';
+import _ from 'lodash';
 
 export interface Props {
   model: NavModel;
@@ -88,6 +89,43 @@ const Navigation = ({ children }: { children: NavModelItem[] }) => {
   );
 };
 
+const CN_Menu_Mapping: any = {
+  create: '搜索',
+  dashboard: '仪表盘',
+  folder: '文件夹',
+  import: '导入',
+  dashboards: '仪表盘',
+  home: '主页',
+  divider: '分隔器',
+  'manage-dashboards': '管理仪表盘',
+  playlists: '播放列表',
+  snapshots: '快照',
+  explore: '探索',
+  alerting: '告警',
+  'alert-list': '告警规则',
+  channels: '通知渠道',
+  cfg: '配置',
+  datasources: '数据源',
+  users: '用户',
+  teams: '团队',
+  plugins: '插件',
+  'org-settings': '组织设置',
+  apikeys: 'API Keys',
+  admin: '服务器管理',
+  'global-users': '全局用户',
+  'global-orgs': '全局组织',
+  'server-settings': '服务设置',
+  'server-stats': '服务状态',
+  upgrading: '升级',
+};
+const CN_Subtitle_Mapping: any = {
+  dashboards: '管理仪表盘 & 文件夹',
+  explore: '探索数据',
+  alerting: '告警规则 & 通知',
+  cfg: '组织：主组织',
+  admin: '管理所有用户 & 组织',
+};
+
 export default class PageHeader extends React.Component<Props, any> {
   constructor(props: Props) {
     super(props);
@@ -96,6 +134,24 @@ export default class PageHeader extends React.Component<Props, any> {
   shouldComponentUpdate() {
     //Hack to re-render on changed props from angular with the @observer decorator
     return true;
+  }
+
+  getCnMenu(menuList: any[]) {
+    if (menuList instanceof Array && menuList.length > 0) {
+      for (let mn of menuList) {
+        let lowerKey = mn.id || mn.text.toLowerCase();
+        // console.log(lowerKey);
+        if (Reflect.has(CN_Menu_Mapping, lowerKey)) {
+          mn.text = CN_Menu_Mapping[lowerKey];
+        }
+        if (Reflect.has(CN_Subtitle_Mapping, lowerKey)) {
+          mn.subTitle = CN_Subtitle_Mapping[lowerKey];
+        }
+        if (mn.children instanceof Array) {
+          this.getCnMenu(mn.children);
+        }
+      }
+    }
   }
 
   renderTitle(title: string, breadcrumbs: NavModelBreadcrumb[]) {
@@ -156,8 +212,10 @@ export default class PageHeader extends React.Component<Props, any> {
       return null;
     }
 
-    const main = model.main;
-    const children = main.children;
+    let tmpModelMenu = _.cloneDeep(model.main);
+    this.getCnMenu([tmpModelMenu]);
+    const main = tmpModelMenu;
+    const children = tmpModelMenu.children;
 
     return (
       <div className="page-header-canvas">

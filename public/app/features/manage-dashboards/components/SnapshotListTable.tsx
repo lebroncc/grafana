@@ -48,10 +48,10 @@ export const SnapshotListTable: FC<Props> = ({ url }) => {
         <thead>
           <tr>
             <th>
-              <strong>Name</strong>
+              <strong>名称</strong>
             </th>
             <th>
-              <strong>Snapshot url</strong>
+              <strong>快照地址</strong>
             </th>
             <th style={{ width: '70px' }}></th>
             <th style={{ width: '30px' }}></th>

@@ -187,7 +187,7 @@ export class QueryOptions extends PureComponent<Props, State> {
               </>
             }
           >
-            Max data points
+            最大数据点
           </InlineFormLabel>
           <Input
             type="number"
@@ -202,7 +202,7 @@ export class QueryOptions extends PureComponent<Props, State> {
           {isAuto && (
             <>
               <div className="gf-form-label query-segment-operator">=</div>
-              <div className="gf-form-label">Width of panel</div>
+              <div className="gf-form-label">面板的宽度</div>
             </>
           )}
         </div>
@@ -230,7 +230,7 @@ export class QueryOptions extends PureComponent<Props, State> {
                 </>
               }
             >
-              Min interval
+              最小间隔
             </InlineFormLabel>
             <Input
               type="text"
@@ -255,11 +255,11 @@ export class QueryOptions extends PureComponent<Props, State> {
                 </>
               }
             >
-              Interval
+              间隔
             </InlineFormLabel>
             <InlineFormLabel width={6}>{realInterval}</InlineFormLabel>
             <div className="gf-form-label query-segment-operator">=</div>
-            <div className="gf-form-label">Max data points / time range</div>
+            <div className="gf-form-label">最大数据点数 / 时间范围</div>
           </div>
         </div>
       </>
@@ -284,7 +284,7 @@ export class QueryOptions extends PureComponent<Props, State> {
 
     let mdDesc = maxDataPoints;
     if (maxDataPoints === '' && data.request) {
-      mdDesc = `auto = ${data.request.maxDataPoints}`;
+      mdDesc = `自适应 = ${data.request.maxDataPoints}`;
     }
 
     let intervalDesc = interval;
@@ -294,8 +294,8 @@ export class QueryOptions extends PureComponent<Props, State> {
 
     return (
       <>
-        {<div className={styles.collapsedText}>MD = {mdDesc}</div>}
-        {<div className={styles.collapsedText}>Interval = {intervalDesc}</div>}
+        {<div className={styles.collapsedText}>最大数据点 = {mdDesc}</div>}
+        {<div className={styles.collapsedText}>间隔 = {intervalDesc}</div>}
       </>
     );
   }
@@ -307,7 +307,7 @@ export class QueryOptions extends PureComponent<Props, State> {
 
     return (
       <QueryOperationRow
-        title="Query options"
+        title="查询选项"
         headerElement={this.renderCollapsedText(styles)}
         isOpen={isOpen}
         onOpen={this.onOpenOptions}
@@ -318,7 +318,7 @@ export class QueryOptions extends PureComponent<Props, State> {
         {this.renderCacheTimeoutOption()}
 
         <div className="gf-form">
-          <InlineFormLabel width={9}>Relative time</InlineFormLabel>
+          <InlineFormLabel width={9}>相对时间</InlineFormLabel>
           <Input
             type="text"
             className="width-6"
@@ -332,7 +332,7 @@ export class QueryOptions extends PureComponent<Props, State> {
         </div>
 
         <div className="gf-form">
-          <span className="gf-form-label width-9">Time shift</span>
+          <span className="gf-form-label width-9">时移</span>
           <Input
             type="text"
             className="width-6"
@@ -347,7 +347,7 @@ export class QueryOptions extends PureComponent<Props, State> {
         {(timeShift || relativeTime) && (
           <div className="gf-form-inline">
             <Switch
-              label="Hide time info"
+              label="隐藏时间信息"
               labelClass="width-9"
               checked={hideTimeOverride}
               onChange={this.onToggleTimeOverride}

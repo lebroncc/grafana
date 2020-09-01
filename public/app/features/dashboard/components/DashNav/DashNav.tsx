@@ -129,7 +129,7 @@ class DashNav extends PureComponent<Props> {
     if (canStar) {
       buttons.push(
         <DashNavButton
-          tooltip="Mark as favorite"
+          tooltip="收藏"
           classSuffix="star"
           icon={isStarred ? 'favorite' : 'star'}
           iconType={isStarred ? 'mono' : 'default'}
@@ -146,7 +146,7 @@ class DashNav extends PureComponent<Props> {
         <ModalsController key="button-share">
           {({ showModal, hideModal }) => (
             <DashNavButton
-              tooltip="Share dashboard"
+              tooltip="分享"
               classSuffix="share"
               icon="share-alt"
               iconSize="lg"
@@ -221,7 +221,7 @@ class DashNav extends PureComponent<Props> {
       buttons.push(
         <DashNavButton
           classSuffix="save"
-          tooltip="Add panel"
+          tooltip="创建面板"
           icon="panel-add"
           onClick={onAddPanel}
           iconType="mono"
@@ -233,7 +233,7 @@ class DashNav extends PureComponent<Props> {
         <ModalsController key="button-save">
           {({ showModal, hideModal }) => (
             <DashNavButton
-              tooltip="Save dashboard"
+              tooltip="保存仪表盘"
               classSuffix="save"
               icon="save"
               onClick={() => {
@@ -249,9 +249,10 @@ class DashNav extends PureComponent<Props> {
     }
 
     if (snapshotUrl) {
+      // Open original dashboard
       buttons.push(
         <DashNavButton
-          tooltip="Open original dashboard"
+          tooltip="打开原始仪表盘"
           classSuffix="snapshot-origin"
           href={textUtil.sanitizeUrl(snapshotUrl)}
           icon="link"
@@ -263,7 +264,7 @@ class DashNav extends PureComponent<Props> {
     if (showSettings) {
       buttons.push(
         <DashNavButton
-          tooltip="Dashboard settings"
+          tooltip="设置仪表盘"
           classSuffix="settings"
           icon="cog"
           onClick={this.onOpenSettings}
@@ -310,7 +311,7 @@ class DashNav extends PureComponent<Props> {
         <div className="navbar-buttons navbar-buttons--actions">{this.renderRightActionsButton()}</div>
 
         <div className="navbar-buttons navbar-buttons--tv">
-          <DashNavButton tooltip="Cycle view mode" classSuffix="tv" icon="monitor" onClick={this.onToggleTVMode} />
+          <DashNavButton tooltip="循环视图模式" classSuffix="tv" icon="monitor" onClick={this.onToggleTVMode} />
         </div>
 
         {!dashboard.timepicker.hidden && (

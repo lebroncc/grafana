@@ -212,7 +212,7 @@ export const TabsBarContent: React.FC<{
       <div className={styles.tabsButton}>
         <DashNavButton
           icon="angle-right"
-          tooltip="Close options pane"
+          tooltip="关闭面板选项"
           classSuffix="close-options"
           onClick={onClose}
           iconSize="lg"
@@ -224,9 +224,9 @@ export const TabsBarContent: React.FC<{
 
 const tabSelections: Array<SelectableValue<string>> = [
   {
-    label: 'Panel',
+    label: '面板',
     value: 'options',
-    tooltip: 'Configure panel display options',
+    tooltip: '配置面板显示选项',
   },
   {
     label: 'Field',

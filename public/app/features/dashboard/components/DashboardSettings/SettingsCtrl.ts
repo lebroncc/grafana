@@ -67,22 +67,22 @@ export class SettingsCtrl {
 
     if (this.dashboard.meta.canEdit) {
       this.sections.push({
-        title: 'General',
+        title: '常规选项',
         id: 'settings',
         icon: 'sliders-v-alt',
       });
       this.sections.push({
-        title: 'Annotations',
+        title: '注解',
         id: 'annotations',
         icon: 'comment-alt',
       });
       this.sections.push({
-        title: 'Variables',
+        title: '变量',
         id: 'templating',
         icon: 'calculator-alt',
       });
       this.sections.push({
-        title: 'Links',
+        title: '链接',
         id: 'links',
         icon: 'link',
       });
@@ -90,7 +90,7 @@ export class SettingsCtrl {
 
     if (this.dashboard.id && this.dashboard.meta.canSave) {
       this.sections.push({
-        title: 'Versions',
+        title: '历史版本',
         id: 'versions',
         icon: 'history',
       });
@@ -98,7 +98,7 @@ export class SettingsCtrl {
 
     if (this.dashboard.id && this.dashboard.meta.canAdmin) {
       this.sections.push({
-        title: 'Permissions',
+        title: '权限',
         id: 'permissions',
         icon: 'lock',
       });
@@ -113,7 +113,7 @@ export class SettingsCtrl {
     }
 
     this.sections.push({
-      title: 'JSON Model',
+      title: 'JSON 模型',
       id: 'dashboard_json',
       icon: 'arrow',
     });

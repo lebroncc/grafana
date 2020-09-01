@@ -102,13 +102,13 @@ const NotificationsListPage: FC = () => {
 
         {!(notifications.length || state.loading) && (
           <EmptyListCTA
-            title="There are no notification channels defined yet"
+            title="尚未创建通知渠道"
             buttonIcon="channel-add"
             buttonLink="alerting/notification/new"
-            buttonTitle="Add channel"
-            proTip="You can include images in your alert notifications."
+            buttonTitle="创建渠道"
+            proTip="您可以在告警通知中包含图像."
             proTipLink="http://docs.grafana.org/alerting/notifications/"
-            proTipLinkTitle="Learn more"
+            proTipLinkTitle="更多"
             proTipTarget="_blank"
           />
         )}

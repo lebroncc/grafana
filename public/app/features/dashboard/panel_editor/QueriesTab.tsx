@@ -221,7 +221,7 @@ export class QueriesTab extends PureComponent<Props, State> {
               onClick={this.openQueryInspector}
               aria-label={selectors.components.QueryTab.queryInspectorButton}
             >
-              Query inspector
+              查询检查器
             </Button>
           </div>
         </div>
@@ -310,13 +310,13 @@ export class QueriesTab extends PureComponent<Props, State> {
             variant="secondary"
             aria-label={selectors.components.QueryTab.addQuery}
           >
-            Query
+            查询
           </Button>
         )}
         {isAddingMixed && this.renderMixedPicker()}
         {config.featureToggles.expressions && (
           <Button icon="plus" onClick={this.onAddExpressionClick} variant="secondary">
-            Expression
+            表达式
           </Button>
         )}
       </HorizontalGroup>

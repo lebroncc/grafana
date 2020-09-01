@@ -238,7 +238,7 @@ function getNewDashboardModelData(urlFolderId?: string): any {
       folderId: 0,
     },
     dashboard: {
-      title: 'New dashboard',
+      title: '新建仪表盘',
       panels: [
         {
           type: 'add-panel',
