@@ -146,6 +146,8 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = pr
   const historyOptions = mapToHistoryOptions(props.history, props.timeZone);
   const { quickOptions = [], otherOptions = [], isFullscreen } = props;
 
+  // Relative time ranges
+  // Other quick ranges
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
@@ -154,7 +156,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = pr
       <CustomScrollbar className={styles.rightSide}>
         <NarrowScreenForm {...props} visible={!isFullscreen} historyOptions={historyOptions} />
         <TimeRangeList
-          title="Relative time ranges"
+          title="相对时间范围"
           options={quickOptions}
           onSelect={props.onChange}
           value={props.value}
@@ -162,7 +164,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = pr
         />
         <div className={styles.spacing} />
         <TimeRangeList
-          title="Other quick ranges"
+          title="快捷选择时间范围"
           options={otherOptions}
           onSelect={props.onChange}
           value={props.value}
@@ -193,7 +195,7 @@ const NarrowScreenForm: React.FC<FormProps> = props => {
   return (
     <>
       <div className={styles.header} onClick={() => setCollapsed(!collapsed)}>
-        <TimePickerTitle>Absolute time range</TimePickerTitle>
+        <TimePickerTitle>时间范围选择</TimePickerTitle>
         {<Icon name={collapsed ? 'angle-up' : 'angle-down'} />}
       </div>
       {collapsed && (
@@ -207,7 +209,7 @@ const NarrowScreenForm: React.FC<FormProps> = props => {
             />
           </div>
           <TimeRangeList
-            title="Recently used absolute ranges"
+            title="最近使用的时间范围"
             options={props.historyOptions || []}
             onSelect={props.onChange}
             value={props.value}
@@ -232,13 +234,13 @@ const FullScreenForm: React.FC<FormProps> = props => {
     <>
       <div className={styles.container}>
         <div className={styles.title}>
-          <TimePickerTitle>Absolute time range</TimePickerTitle>
+          <TimePickerTitle>时间范围选择</TimePickerTitle>
         </div>
         <TimeRangeForm value={props.value} timeZone={props.timeZone} onApply={props.onChange} isFullscreen={true} />
       </div>
       <div className={styles.recent}>
         <TimeRangeList
-          title="Recently used absolute ranges"
+          title="最近使用的时间范围"
           options={props.historyOptions || []}
           onSelect={props.onChange}
           value={props.value}

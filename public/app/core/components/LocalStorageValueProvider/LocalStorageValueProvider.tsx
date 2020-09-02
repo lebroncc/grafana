@@ -11,6 +11,8 @@ interface State<T> {
   value: T;
 }
 
+// const LOCAL_STORAGE_KEY = 'grafana.dashboard.timepicker.history';
+
 export class LocalStorageValueProvider<T> extends PureComponent<Props<T>, State<T>> {
   constructor(props: Props<T>) {
     super(props);
@@ -34,8 +36,10 @@ export class LocalStorageValueProvider<T> extends PureComponent<Props<T>, State<
 
   render() {
     const { children } = this.props;
-    const { value } = this.state;
+    let { value } = this.state;
 
+    // if (storageKey === LOCAL_STORAGE_KEY){
+    // }
     return <>{children(value, this.onSaveToStore)}</>;
   }
 }
