@@ -71,7 +71,7 @@ export const ValueMappingsEditor: React.FC<Props> = ({ valueMappings, onChange, 
         aria-label="ValueMappingsEditor add mapping button"
         variant="secondary"
       >
-        Add value mapping
+        新增值映射
       </Button>
     </>
   );

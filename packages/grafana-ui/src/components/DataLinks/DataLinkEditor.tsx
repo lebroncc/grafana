@@ -44,7 +44,7 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
 
     return (
       <div className={styles.listItem}>
-        <Field label="Title">
+        <Field label="标题">
           <Input value={value.title} onChange={onTitleChange} placeholder="Show details" />
         </Field>
 
@@ -52,7 +52,7 @@ export const DataLinkEditor: React.FC<DataLinkEditorProps> = React.memo(
           <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} />
         </Field>
 
-        <Field label="Open in new tab">
+        <Field label="在新窗口打开">
           <Switch checked={value.targetBlank || false} onChange={onOpenInNewTabChanged} />
         </Field>
 
