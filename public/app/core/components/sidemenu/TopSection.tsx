@@ -25,7 +25,7 @@ const CN_Menu_Mapping: any = {
   teams: '团队',
   plugins: '插件',
   'org-settings': '组织设置',
-  apikeys: 'API Keys',
+  apikeys: 'API 密钥',
   admin: '服务器管理',
   'global-users': '全局用户',
   'global-orgs': '全局组织',
@@ -53,7 +53,7 @@ const TopSection: FC<any> = () => {
   const navTree = _.cloneDeep(config.bootData.navTree);
   const mainLinks = _.filter(navTree, item => !item.hideFromMenu);
   getCnMenuList(mainLinks);
-  console.log(mainLinks);
+  // console.log(mainLinks);
 
   const searchLink = {
     text: '搜索',

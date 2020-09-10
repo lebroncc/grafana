@@ -41,7 +41,7 @@ export const TLSAuthSettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceCon
           `
         )}
       >
-        <h6>TLS Auth Details</h6>
+        <h6>TLS 授权详情</h6>
         <Tooltip
           placement="right-end"
           content="TLS Certs are encrypted and stored in the Grafana database."
@@ -58,7 +58,7 @@ export const TLSAuthSettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceCon
             hasCert={!!hasTLSCACert}
             onChange={onCertificateChangeFactory('tlsCACert')}
             placeholder="Begins with -----BEGIN CERTIFICATE-----"
-            label="CA Cert"
+            label="CA 证书"
             onClick={onResetClickFactory('tlsCACert')}
           />
         )}
@@ -67,7 +67,7 @@ export const TLSAuthSettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceCon
           <>
             <CertificationKey
               hasCert={!!hasTLSClientCert}
-              label="Client Cert"
+              label="客户端证书"
               onChange={onCertificateChangeFactory('tlsClientCert')}
               placeholder="Begins with -----BEGIN CERTIFICATE-----"
               onClick={onResetClickFactory('tlsClientCert')}
@@ -75,7 +75,7 @@ export const TLSAuthSettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceCon
 
             <CertificationKey
               hasCert={!!hasTLSClientKey}
-              label="Client Key"
+              label="客户端密钥"
               placeholder="Begins with -----BEGIN RSA PRIVATE KEY-----"
               onChange={onCertificateChangeFactory('tlsClientKey')}
               onClick={onResetClickFactory('tlsClientKey')}

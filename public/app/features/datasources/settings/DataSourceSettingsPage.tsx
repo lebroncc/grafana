@@ -75,9 +75,10 @@ export class DataSourceSettingsPage extends PureComponent<Props> {
 
   onDelete = () => {
     appEvents.emit(CoreEvents.showConfirmModal, {
-      title: 'Delete',
-      text: 'Are you sure you want to delete this data source?',
-      yesText: 'Delete',
+      title: '删除',
+      text: '是否确认删除数据源？',
+      yesText: '删除',
+      noText: '取消',
       icon: 'trash-alt',
       onConfirm: () => {
         this.confirmDelete();
@@ -143,11 +144,11 @@ export class DataSourceSettingsPage extends PureComponent<Props> {
             <div className="gf-form-button-row">
               {showDelete && (
                 <button type="submit" className="btn btn-danger" onClick={this.onDelete}>
-                  Delete
+                  删除
                 </button>
               )}
               <a className="btn btn-inverse" href="datasources">
-                Back
+                返回
               </a>
             </div>
           </div>

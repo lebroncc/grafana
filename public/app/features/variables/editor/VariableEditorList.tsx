@@ -48,9 +48,9 @@ export class VariableEditorList extends PureComponent<Props> {
           {this.props.variables.length === 0 && (
             <div>
               <EmptyListCTA
-                title="There are no variables yet"
+                title="尚未创建变量"
                 buttonIcon="calculator-alt"
-                buttonTitle="Add variable"
+                buttonTitle="创建变量"
                 infoBox={{
                   __html: ` <p>
                     Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server
@@ -63,7 +63,7 @@ export class VariableEditorList extends PureComponent<Props> {
                     for more information.
                   </p>`,
                 }}
-                infoBoxTitle="What do variables do?"
+                infoBoxTitle="变量的作用是什么?"
                 onClick={this.props.onAddClick}
               />
             </div>
@@ -77,8 +77,8 @@ export class VariableEditorList extends PureComponent<Props> {
               >
                 <thead>
                   <tr>
-                    <th>Variable</th>
-                    <th>Definition</th>
+                    <th>变量</th>
+                    <th>定义</th>
                     <th colSpan={5} />
                   </tr>
                 </thead>
@@ -114,7 +114,7 @@ export class VariableEditorList extends PureComponent<Props> {
                             <IconButton
                               onClick={event => this.onChangeVariableOrder(event, variable, MoveType.up)}
                               name="arrow-up"
-                              title="Move variable up"
+                              title="上移"
                               aria-label={selectors.pages.Dashboard.Settings.Variables.List.tableRowArrowUpButtons(
                                 variable.name
                               )}
@@ -126,7 +126,7 @@ export class VariableEditorList extends PureComponent<Props> {
                             <IconButton
                               onClick={event => this.onChangeVariableOrder(event, variable, MoveType.down)}
                               name="arrow-down"
-                              title="Move variable down"
+                              title="下移"
                               aria-label={selectors.pages.Dashboard.Settings.Variables.List.tableRowArrowDownButtons(
                                 variable.name
                               )}
@@ -137,7 +137,7 @@ export class VariableEditorList extends PureComponent<Props> {
                           <IconButton
                             onClick={event => this.onDuplicateVariable(event, toVariableIdentifier(variable))}
                             name="copy"
-                            title="Duplicate variable"
+                            title="复制变量"
                             aria-label={selectors.pages.Dashboard.Settings.Variables.List.tableRowDuplicateButtons(
                               variable.name
                             )}
@@ -147,7 +147,7 @@ export class VariableEditorList extends PureComponent<Props> {
                           <IconButton
                             onClick={event => this.onRemoveVariable(event, toVariableIdentifier(variable))}
                             name="trash-alt"
-                            title="Remove variable"
+                            title="移除变量"
                             aria-label={selectors.pages.Dashboard.Settings.Variables.List.tableRowRemoveButtons(
                               variable.name
                             )}

@@ -37,7 +37,7 @@ const getSecretFormFieldStyles = () => {
  * to the user (like datasource passwords).
  */
 export const SecretFormField: FunctionComponent<Props> = ({
-  label = 'Password',
+  label = '密码',
   labelWidth,
   inputWidth = 12,
   onReset,
@@ -63,7 +63,7 @@ export const SecretFormField: FunctionComponent<Props> = ({
               {...omit(inputProps, 'value')}
             />
             <Button onClick={onReset} variant="secondary">
-              Reset
+              重置
             </Button>
           </>
         ) : (

@@ -230,12 +230,8 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
             <RadioButtonGroup value={uiState.mode} options={displayModes} onChange={this.onDiplayModeChange} />
             <DashNavTimeControls dashboard={dashboard} location={location} updateLocation={updateLocation} />
             {!uiState.isPanelOptionsVisible && (
-              <DashNavButton
-                onClick={this.onTogglePanelOptions}
-                tooltip="Open options pane"
-                classSuffix="close-options"
-              >
-                <Icon name="angle-left" /> <span style={{ paddingLeft: '6px' }}>Show options</span>
+              <DashNavButton onClick={this.onTogglePanelOptions} tooltip="打开选项面板" classSuffix="close-options">
+                <Icon name="angle-left" /> <span style={{ paddingLeft: '6px' }}>显示选项</span>
               </DashNavButton>
             )}
           </HorizontalGroup>

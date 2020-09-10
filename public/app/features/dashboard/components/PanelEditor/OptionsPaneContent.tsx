@@ -229,12 +229,12 @@ const tabSelections: Array<SelectableValue<string>> = [
     tooltip: '配置面板显示选项',
   },
   {
-    label: 'Field',
+    label: '字段',
     value: 'defaults',
     tooltip: 'Configure field options',
   },
   {
-    label: 'Overrides',
+    label: '覆盖',
     value: 'overrides',
     tooltip: 'Configure field option overrides',
   },

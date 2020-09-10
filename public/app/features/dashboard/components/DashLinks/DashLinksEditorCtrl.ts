@@ -21,16 +21,16 @@ export class DashLinksEditorCtrl {
   link: any;
 
   emptyListCta = {
-    title: 'There are no dashboard links added yet',
+    title: '尚未创建仪表盘链接',
     buttonIcon: 'link',
-    buttonTitle: 'Add Dashboard Link',
+    buttonTitle: '创建仪表盘链接',
     infoBox: {
       __html: `<p>
       Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard
       header.
     </p>`,
     },
-    infoBoxTitle: 'What are Dashboard Links?',
+    infoBoxTitle: '仪表盘链接是什么?',
   };
 
   /** @ngInject */

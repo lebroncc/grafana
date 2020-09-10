@@ -117,16 +117,16 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
     return (
       <div>
         <form aria-label="Variable editor Form" onSubmit={this.onHandleSubmit}>
-          <h5 className="section-heading">General</h5>
+          <h5 className="section-heading">基本信息</h5>
           <div className="gf-form-group">
             <div className="gf-form-inline">
               <div className="gf-form max-width-19">
-                <span className="gf-form-label width-6">Name</span>
+                <span className="gf-form-label width-6">名称</span>
                 <input
                   type="text"
                   className="gf-form-input"
                   name="name"
-                  placeholder="name"
+                  placeholder="名称"
                   required
                   value={this.props.editor.name}
                   onChange={this.onNameChange}
@@ -135,7 +135,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
               </div>
               <div className="gf-form max-width-19">
                 <InlineFormLabel width={6} tooltip={variableAdapters.get(this.props.variable.type).description}>
-                  Type
+                  类型
                 </InlineFormLabel>
                 <div className="gf-form-select-wrapper max-width-17">
                   <select
@@ -162,18 +162,18 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
 
             <div className="gf-form-inline">
               <div className="gf-form max-width-19">
-                <span className="gf-form-label width-6">Label</span>
+                <span className="gf-form-label width-6">标签</span>
                 <input
                   type="text"
                   className="gf-form-input"
                   value={this.props.variable.label ?? ''}
                   onChange={this.onLabelChange}
-                  placeholder="optional display name"
+                  placeholder="可选，变量展示名称"
                   aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalLabelInput}
                 />
               </div>
               <div className="gf-form max-width-19">
-                <span className="gf-form-label width-6">Hide</span>
+                <span className="gf-form-label width-6">是否隐藏</span>
                 <div className="gf-form-select-wrapper max-width-15">
                   <select
                     className="gf-form-input"
@@ -207,7 +207,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
                 className="btn btn-primary"
                 aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.General.updateButton}
               >
-                Update
+                更新
               </button>
             )}
             {newVariable && (
@@ -216,7 +216,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
                 className="btn btn-primary"
                 aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.General.addButton}
               >
-                Add
+                创建
               </button>
             )}
           </div>

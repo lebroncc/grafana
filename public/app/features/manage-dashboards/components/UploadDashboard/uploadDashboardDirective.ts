@@ -20,7 +20,7 @@ export function uploadDashboardDirective(timer: any, $location: ILocationService
       btnText: '@?',
     },
     link: (scope: any, elem: JQuery) => {
-      scope.btnText = angular.isDefined(scope.btnText) ? scope.btnText : 'Upload .json file';
+      scope.btnText = angular.isDefined(scope.btnText) ? scope.btnText : '上传 .json 文件';
 
       function file_selected(evt: any) {
         const files = evt.target.files; // FileList object

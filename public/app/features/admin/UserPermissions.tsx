@@ -14,8 +14,8 @@ interface State {
 }
 
 const adminOptions = [
-  { label: 'Yes', value: 'YES' },
-  { label: 'No', value: 'NO' },
+  { label: '是', value: 'YES' },
+  { label: '否', value: 'NO' },
 ];
 
 export class UserPermissions extends PureComponent<Props, State> {
@@ -52,13 +52,13 @@ export class UserPermissions extends PureComponent<Props, State> {
 
     return (
       <>
-        <h3 className="page-heading">Permissions</h3>
+        <h3 className="page-heading">权限</h3>
         <div className="gf-form-group">
           <div className="gf-form">
             <table className="filter-table form-inline">
               <tbody>
                 <tr>
-                  <td className="width-16">Grafana Admin</td>
+                  <td className="width-16">Grafana 管理员</td>
                   {isEditing ? (
                     <td colSpan={2}>
                       <RadioButtonGroup
@@ -71,10 +71,10 @@ export class UserPermissions extends PureComponent<Props, State> {
                     <td colSpan={2}>
                       {isGrafanaAdmin ? (
                         <>
-                          <Icon name="shield" /> Yes
+                          <Icon name="shield" /> 是
                         </>
                       ) : (
-                        <>No</>
+                        <>否</>
                       )}
                     </td>
                   )}
@@ -85,9 +85,9 @@ export class UserPermissions extends PureComponent<Props, State> {
                         onClick={this.onChangeClick}
                         onConfirm={this.onGrafanaAdminChange}
                         onCancel={this.onCancelClick}
-                        confirmText="Change"
+                        confirmText="修改"
                       >
-                        Change
+                        修改
                       </ConfirmButton>
                     </div>
                   </td>

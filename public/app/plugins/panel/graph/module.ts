@@ -166,13 +166,13 @@ class GraphCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('图标显示属性', 'public/app/plugins/panel/graph/tab_display.html');
-    this.addEditorTab('Series overrides', 'public/app/plugins/panel/graph/tab_series_overrides.html');
-    this.addEditorTab('Axes', axesEditorComponent);
-    this.addEditorTab('Legend', 'public/app/plugins/panel/graph/tab_legend.html');
-    this.addEditorTab('Thresholds', 'public/app/plugins/panel/graph/tab_thresholds.html');
-    this.addEditorTab('Time regions', 'public/app/plugins/panel/graph/tab_time_regions.html');
-    this.addEditorTab('Data links', 'public/app/plugins/panel/graph/tab_drilldown_links.html');
+    this.addEditorTab('图表显示属性', 'public/app/plugins/panel/graph/tab_display.html');
+    this.addEditorTab('series override', 'public/app/plugins/panel/graph/tab_series_overrides.html');
+    this.addEditorTab('坐标轴', axesEditorComponent);
+    this.addEditorTab('图列', 'public/app/plugins/panel/graph/tab_legend.html');
+    this.addEditorTab('阈值', 'public/app/plugins/panel/graph/tab_thresholds.html');
+    this.addEditorTab('时间区间', 'public/app/plugins/panel/graph/tab_time_regions.html');
+    // this.addEditorTab('Links', 'public/app/plugins/panel/graph/tab_drilldown_links.html');
     this.subTabIndex = 0;
     this.hiddenSeriesTainted = false;
   }

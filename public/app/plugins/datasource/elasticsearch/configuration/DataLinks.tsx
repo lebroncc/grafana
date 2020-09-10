@@ -26,11 +26,9 @@ export const DataLinks = (props: Props) => {
 
   return (
     <>
-      <h3 className="page-heading">Data links</h3>
+      <h3 className="page-heading">数据链接</h3>
 
-      <div className={styles.infoText}>
-        Add links to existing fields. Links will be shown in log row details next to the field value.
-      </div>
+      <div className={styles.infoText}>添加指向现有字段的链接。链接将显示在字段值旁边的日志行详细信息中。</div>
 
       <div className="gf-form-group">
         {value &&
@@ -74,7 +72,7 @@ export const DataLinks = (props: Props) => {
               onChange(newDataLinks);
             }}
           >
-            Add
+            新增
           </Button>
         </div>
       </div>

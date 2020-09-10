@@ -13,7 +13,7 @@ export const plugin = new PanelPlugin<Options, CustomFieldConfig>(TablePanel)
       builder
         .addNumberInput({
           path: 'width',
-          name: 'Column width',
+          name: '列宽度',
           settings: {
             placeholder: 'auto',
             min: 20,
@@ -23,26 +23,26 @@ export const plugin = new PanelPlugin<Options, CustomFieldConfig>(TablePanel)
         })
         .addRadio({
           path: 'align',
-          name: 'Column alignment',
+          name: '列对齐',
           settings: {
             options: [
-              { label: 'auto', value: null },
-              { label: 'left', value: 'left' },
-              { label: 'center', value: 'center' },
-              { label: 'right', value: 'right' },
+              { label: '自适应', value: null },
+              { label: '左对齐', value: 'left' },
+              { label: '中间对齐', value: 'center' },
+              { label: '右对齐', value: 'right' },
             ],
           },
           defaultValue: null,
         })
         .addSelect({
           path: 'displayMode',
-          name: 'Cell display mode',
-          description: 'Color text, background, show as gauge, etc',
+          name: '单元格显示模式',
+          description: '文本颜色，背景，显示为仪表等等',
           settings: {
             options: [
-              { value: TableCellDisplayMode.Auto, label: 'Auto' },
-              { value: TableCellDisplayMode.ColorText, label: 'Color text' },
-              { value: TableCellDisplayMode.ColorBackground, label: 'Color background' },
+              { value: TableCellDisplayMode.Auto, label: '自适应' },
+              { value: TableCellDisplayMode.ColorText, label: '文本颜色' },
+              { value: TableCellDisplayMode.ColorBackground, label: '背景颜色' },
               { value: TableCellDisplayMode.GradientGauge, label: 'Gradient gauge' },
               { value: TableCellDisplayMode.LcdGauge, label: 'LCD gauge' },
               { value: TableCellDisplayMode.JSONView, label: 'JSON View' },
@@ -54,8 +54,8 @@ export const plugin = new PanelPlugin<Options, CustomFieldConfig>(TablePanel)
   .setPanelOptions(builder => {
     builder.addBooleanSwitch({
       path: 'showHeader',
-      name: 'Show header',
-      description: "To display table's header or not to display",
+      name: '展示表格标题',
+      description: '是否显示表格标题',
       defaultValue: true,
     });
   });

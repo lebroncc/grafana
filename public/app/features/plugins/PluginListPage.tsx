@@ -34,7 +34,7 @@ export class PluginListPage extends PureComponent<Props> {
 
     const linkButton = {
       href: 'https://grafana.com/plugins?utm_source=grafana_plugin_list',
-      title: 'Find more plugins on Grafana.com',
+      title: '在 Grafana.com 寻找更多插件',
     };
 
     return (

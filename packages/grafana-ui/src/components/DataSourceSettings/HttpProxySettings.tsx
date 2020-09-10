@@ -7,14 +7,14 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceC
     <>
       <div className="gf-form-inline">
         <Switch
-          label="TLS Client Auth"
+          label="TLS 客户端认证"
           labelClass="width-13"
           checked={dataSourceConfig.jsonData.tlsAuth || false}
           onChange={event => onChange({ ...dataSourceConfig.jsonData, tlsAuth: event!.currentTarget.checked })}
         />
 
         <Switch
-          label="With CA Cert"
+          label="CA 证书"
           labelClass="width-13"
           checked={dataSourceConfig.jsonData.tlsAuthWithCACert || false}
           onChange={event =>
@@ -25,7 +25,7 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceC
       </div>
       <div className="gf-form-inline">
         <Switch
-          label="Skip TLS Verify"
+          label="跳过 TLS 验证"
           labelClass="width-13"
           checked={dataSourceConfig.jsonData.tlsSkipVerify || false}
           onChange={event => onChange({ ...dataSourceConfig.jsonData, tlsSkipVerify: event!.currentTarget.checked })}
@@ -33,7 +33,7 @@ export const HttpProxySettings: React.FC<HttpSettingsBaseProps> = ({ dataSourceC
       </div>
       <div className="gf-form-inline">
         <Switch
-          label="Forward OAuth Identity"
+          label="转发 OAuth 标识"
           labelClass="width-13"
           checked={dataSourceConfig.jsonData.oauthPassThru || false}
           onChange={event => onChange({ ...dataSourceConfig.jsonData, oauthPassThru: event!.currentTarget.checked })}

@@ -66,10 +66,10 @@ export class DataSourceVariableEditorUnConnected extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form-group">
-          <h5 className="section-heading">Data source options</h5>
+          <h5 className="section-heading">数据源选项</h5>
 
           <div className="gf-form">
-            <label className="gf-form-label width-12">Type</label>
+            <label className="gf-form-label width-12">类型</label>
             <div className="gf-form-select-wrapper max-width-18">
               <select
                 className="gf-form-input"
@@ -99,7 +99,7 @@ export class DataSourceVariableEditorUnConnected extends PureComponent<Props> {
                 </div>
               }
             >
-              Instance name filter
+              实例名称筛选
             </InlineFormLabel>
             <input
               type="text"

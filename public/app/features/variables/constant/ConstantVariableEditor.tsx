@@ -26,9 +26,9 @@ export class ConstantVariableEditor extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form-group">
-          <h5 className="section-heading">Constant options</h5>
+          <h5 className="section-heading">常量选项</h5>
           <div className="gf-form">
-            <span className="gf-form-label">Value</span>
+            <span className="gf-form-label">值</span>
             <input
               type="text"
               className="gf-form-input"

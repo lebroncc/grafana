@@ -92,12 +92,12 @@ export const dashboardAclTargets: AclTargetInfo[] = [
 ];
 
 export const dashboardPermissionLevels: DashboardPermissionInfo[] = [
-  { value: PermissionLevel.View, label: 'View', description: 'Can view dashboards.' },
-  { value: PermissionLevel.Edit, label: 'Edit', description: 'Can add, edit and delete dashboards.' },
+  { value: PermissionLevel.View, label: '查看', description: '允许查看仪表盘.' },
+  { value: PermissionLevel.Edit, label: '编辑', description: '允许新增、编辑和删除仪表盘.' },
   {
     value: PermissionLevel.Admin,
-    label: 'Admin',
-    description: 'Can add/remove permissions and can add, edit and delete dashboards.',
+    label: '管理员',
+    description: '能够设置权限，允许新增、编辑和删除仪表盘.',
   },
 ];
 

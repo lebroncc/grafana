@@ -43,7 +43,7 @@ export const DataLink = (props: Props) => {
           labelWidth={6}
           // A bit of a hack to prevent using default value for the width from FormField
           inputWidth={null}
-          label="Field"
+          label="字段"
           type="text"
           value={value.field}
           tooltip={'Can be exact field name or a regex pattern that will match on the field name.'}

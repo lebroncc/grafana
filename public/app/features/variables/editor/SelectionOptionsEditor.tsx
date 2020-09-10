@@ -36,11 +36,11 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
   );
   return (
     <div className="section gf-form-group">
-      <h5 className="section-heading">Selection Options</h5>
+      <h5 className="section-heading">选择选项</h5>
       <div className="section">
         <div aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsMultiSwitch}>
           <Switch
-            label="Multi-value"
+            label="多选"
             labelClass="width-10"
             checked={props.variable.multi}
             onChange={onMultiChanged}
@@ -49,7 +49,7 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
         </div>
         <div aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsIncludeAllSwitch}>
           <Switch
-            label="Include All option"
+            label="包括所有选项"
             labelClass="width-10"
             checked={props.variable.includeAll}
             onChange={onIncludeAllChanged}

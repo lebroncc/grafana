@@ -71,7 +71,7 @@ export const PanelOptionsTab: FC<Props> = ({
   // Old legacy react editor
   if (plugin.editor && panel && !plugin.optionEditors) {
     elements.push(
-      <OptionsGroup title="Options" id="legacy react editor" key="legacy react editor">
+      <OptionsGroup title="选项" id="legacy react editor" key="legacy react editor">
         <plugin.editor data={data} options={panel.getOptions()} onOptionsChange={onPanelOptionsChanged} />
       </OptionsGroup>
     );
@@ -80,7 +80,7 @@ export const PanelOptionsTab: FC<Props> = ({
   if (plugin.optionEditors && panel) {
     elements.push(
       <PanelOptionsEditor
-        key="panel options"
+        key="面板选项"
         options={panel.getOptions()}
         onChange={onPanelOptionsChanged}
         replaceVariables={panel.replaceVariables}
@@ -98,7 +98,7 @@ export const PanelOptionsTab: FC<Props> = ({
 
   elements.push(
     <OptionsGroup
-      renderTitle={isExpanded => <>Links {!isExpanded && panelLinksCount > 0 && <Counter value={panelLinksCount} />}</>}
+      renderTitle={isExpanded => <>链接 {!isExpanded && panelLinksCount > 0 && <Counter value={panelLinksCount} />}</>}
       id="panel links"
       key="panel links"
       defaultToClosed
@@ -113,12 +113,10 @@ export const PanelOptionsTab: FC<Props> = ({
   );
 
   elements.push(
-    <OptionsGroup title="Repeat options" id="panel repeats" key="panel repeats" defaultToClosed>
+    <OptionsGroup title="重复选项" id="panel repeats" key="panel repeats" defaultToClosed>
       <Field
-        label="Repeat by variable"
-        description="Repeat this panel for each value in the selected variable.
-          This is not visible while in edit mode. You need to go back to dashboard and then update the variable or
-          reload the dashboard."
+        label="重复变量"
+        description="在此面板中重复所选变量的值。这在编辑模式下不可见。您需要返回到仪表板，然后更新变量或重新加载仪表板。."
       >
         <Select
           value={panel.repeat}

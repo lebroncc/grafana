@@ -35,7 +35,7 @@ export const SaveDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard,
           <div className="gf-form-group">
             {hasTimeChanged && (
               <Checkbox
-                label="Save current time range as dashboard default"
+                label="将当前时间范围保存为仪表板默认值"
                 name="saveTimerange"
                 ref={register}
                 aria-label={selectors.pages.SaveDashboardModal.saveTimerange}
@@ -43,7 +43,7 @@ export const SaveDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard,
             )}
             {hasVariableChanged && (
               <Checkbox
-                label="Save current variable values as dashboard default"
+                label="将当前变量值保存为仪表板默认值"
                 name="saveVariables"
                 ref={register}
                 aria-label={selectors.pages.SaveDashboardModal.saveVariables}
@@ -51,15 +51,15 @@ export const SaveDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard,
             )}
             {(hasVariableChanged || hasTimeChanged) && <div className="gf-form-group" />}
 
-            <TextArea name="message" ref={register} placeholder="Add a note to describe your changes..." autoFocus />
+            <TextArea name="message" ref={register} placeholder="添加注释以描述您的更改..." autoFocus />
           </div>
 
           <HorizontalGroup>
             <Button type="submit" aria-label={selectors.pages.SaveDashboardModal.save}>
-              Save
+              保存
             </Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              取消
             </Button>
           </HorizontalGroup>
         </>

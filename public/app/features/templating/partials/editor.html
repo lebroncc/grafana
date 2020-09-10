@@ -1,12 +1,12 @@
 <div ng-controller="VariableEditorCtrl" ng-init="init()">
   <div class="page-action-bar">
     <h3 class="dashboard-settings__header">
-      <a ng-click="setMode('list')" aria-label="{{::selectors.headerLink}}">Variables</a>
+      <a ng-click="setMode('list')" aria-label="{{::selectors.headerLink}}">变量</a>
       <span ng-show="mode === 'new'"
-        ><icon name="'angle-right'" aria-label="{{::selectors.modeLabelNew}}"></icon> New</span
+        ><icon name="'angle-right'" aria-label="{{::selectors.modeLabelNew}}"></icon> 创建</span
       >
       <span ng-show="mode === 'edit'"
-        ><icon name="'angle-right'" aria-label="{{::selectors.modeLabelEdit}}"></icon> Edit</span
+        ><icon name="'angle-right'" aria-label="{{::selectors.modeLabelEdit}}"></icon> 编辑</span
       >
     </h3>
 
@@ -19,7 +19,7 @@
       ng-hide="mode === 'edit' || mode === 'new'"
       aria-label="{{::selectors.newButton}}"
     >
-      New
+      创建
     </a>
   </div>
 
@@ -39,8 +39,8 @@
       <table class="filter-table filter-table--hover" aria-label="{{::selectors.table}}">
         <thead>
           <tr>
-            <th>Variable</th>
-            <th>Definition</th>
+            <th>变量</th>
+            <th>定义</th>
             <th colspan="5"></th>
           </tr>
         </thead>
@@ -104,11 +104,11 @@
   </div>
 
   <form ng-if="mode === 'edit' || mode === 'new'" name="ctrl.form" aria-label="Variable editor Form">
-    <h5 class="section-heading">General</h5>
+    <h5 class="section-heading">基本信息</h5>
     <div class="gf-form-group">
       <div class="gf-form-inline">
         <div class="gf-form max-width-19">
-          <span class="gf-form-label width-6">Name</span>
+          <span class="gf-form-label width-6">名称</span>
           <input
             type="text"
             class="gf-form-input"
@@ -122,7 +122,7 @@
         </div>
         <div class="gf-form max-width-19">
           <span class="gf-form-label width-6">
-            Type
+            类型
             <info-popover mode="right-normal">
               {{ variableTypes[current.type].description }}
             </info-popover>
@@ -230,7 +230,7 @@
     </div>
 
     <div ng-if="current.type === 'custom'" class="gf-form-group">
-      <h5 class="section-heading">Custom Options</h5>
+      <h5 class="section-heading">自定义选项</h5>
       <div class="gf-form">
         <span class="gf-form-label width-14">Values separated by comma</span>
         <input

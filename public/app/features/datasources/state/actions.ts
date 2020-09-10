@@ -153,8 +153,18 @@ export function addDataSource(plugin: DataSourcePluginMeta): ThunkResult<void> {
 export function loadDataSourcePlugins(): ThunkResult<void> {
   return async dispatch => {
     dispatch(dataSourcePluginsLoad());
-    const plugins = await getBackendSrv().get('/api/plugins', { enabled: 1, type: 'datasource' });
-    const categories = buildCategories(plugins);
+    let plugins = await getBackendSrv().get('/api/plugins', { enabled: 1, type: 'datasource' });
+
+    // TODO: 过滤数据源插件
+    // Prometheus Elasticsearch MySQL grafana-dm7
+    let includePluginList = ['Prometheus', 'Elasticsearch', 'MySQL', 'grafana-dm7'];
+    plugins = plugins.filter((item: any) => includePluginList.includes(item.name));
+
+    let categories = buildCategories(plugins);
+
+    let includeCate = ['tsdb', 'logging', 'sql', 'other'];
+    categories = categories.filter((item: any) => includeCate.includes(item.id));
+
     dispatch(dataSourcePluginsLoaded({ plugins, categories }));
   };
 }

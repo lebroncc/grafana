@@ -39,9 +39,9 @@ export class AdHocVariableEditorUnConnected extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form-group">
-          <h5 className="section-heading">Options</h5>
+          <h5 className="section-heading">选项</h5>
           <div className="gf-form max-width-21">
-            <span className="gf-form-label width-8">Data source</span>
+            <span className="gf-form-label width-8">数据源</span>
             <div className="gf-form-select-wrapper max-width-14">
               <select
                 className="gf-form-input"

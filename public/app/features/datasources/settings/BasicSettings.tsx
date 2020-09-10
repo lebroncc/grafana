@@ -22,7 +22,7 @@ const BasicSettings: FC<Props> = ({ dataSourceName, isDefault, onDefaultChange, 
               'preselected in new panels.'
             }
           >
-            Name
+            名称
           </InlineFormLabel>
           <Input
             className="gf-form-input max-width-23"
@@ -35,7 +35,7 @@ const BasicSettings: FC<Props> = ({ dataSourceName, isDefault, onDefaultChange, 
           />
         </div>
         <Switch
-          label="Default"
+          label="设为默认"
           checked={isDefault}
           onChange={event => {
             // @ts-ignore

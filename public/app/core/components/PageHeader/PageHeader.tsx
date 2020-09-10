@@ -110,7 +110,7 @@ const CN_Menu_Mapping: any = {
   teams: '团队',
   plugins: '插件',
   'org-settings': '组织设置',
-  apikeys: 'API Keys',
+  apikeys: 'API 密钥',
   admin: '服务器管理',
   'global-users': '全局用户',
   'global-orgs': '全局组织',
@@ -124,6 +124,7 @@ const CN_Subtitle_Mapping: any = {
   alerting: '告警规则 & 通知',
   cfg: '组织：主组织',
   admin: '管理所有用户 & 组织',
+  import: '从文件或 grafana.com 导入',
 };
 
 export default class PageHeader extends React.Component<Props, any> {

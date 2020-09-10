@@ -31,27 +31,27 @@ const UserCreatePage: React.FC<UserCreatePageProps> = ({ navModel, updateLocatio
   return (
     <Page navModel={navModel}>
       <Page.Contents>
-        <h1>Add new user</h1>
+        <h1>创建新用户</h1>
         <Form onSubmit={onSubmit} validateOn="onBlur">
           {({ register, errors }) => {
             return (
               <>
-                <Field label="Name" required invalid={!!errors.name} error={!!errors.name && 'Name is required'}>
+                <Field label="姓名" required invalid={!!errors.name} error={!!errors.name && '请输入姓名'}>
                   <Input name="name" ref={register({ required: true })} />
                 </Field>
 
-                <Field label="E-mail">
+                <Field label="邮箱">
                   <Input name="email" ref={register} />
                 </Field>
 
-                <Field label="Username">
+                <Field label="登录名">
                   <Input name="login" ref={register} />
                 </Field>
                 <Field
-                  label="Password"
+                  label="密码"
                   required
                   invalid={!!errors.password}
-                  error={!!errors.password && 'Password is required and must contain at least 4 characters'}
+                  error={!!errors.password && '请输入密码且至少包含4个字符'}
                 >
                   <Input
                     type="password"
@@ -61,7 +61,7 @@ const UserCreatePage: React.FC<UserCreatePageProps> = ({ navModel, updateLocatio
                     })}
                   />
                 </Field>
-                <Button type="submit">Create user</Button>
+                <Button type="submit">创建用户</Button>
               </>
             );
           }}

@@ -14,7 +14,7 @@ import { containsVariable } from '../../templating/utils';
 export const createQueryVariableAdapter = (): VariableAdapter<QueryVariableModel> => {
   return {
     id: 'query',
-    description: 'Variable values are fetched from a datasource query',
+    description: '加载变量的数据源',
     name: 'Query',
     initialState: initialQueryVariableModelState,
     reducer: queryVariableReducer,

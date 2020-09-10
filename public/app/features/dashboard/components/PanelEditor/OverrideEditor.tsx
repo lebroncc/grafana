@@ -53,7 +53,7 @@ export const OverrideEditor: React.FC<OverrideEditorProps> = ({
   const styles = getStyles(theme);
 
   const matcherLabel = (
-    <Label category={['Matcher']} description={matcherUi.description}>
+    <Label category={['匹配器']} description={matcherUi.description}>
       {matcherUi.name}
     </Label>
   );
@@ -118,8 +118,8 @@ export const OverrideEditor: React.FC<OverrideEditorProps> = ({
         </HorizontalGroup>
         {!isExpanded && (
           <div className={styles.overrideDetails}>
-            Matcher <Icon name="angle-right" /> {matcherUi.name} <br />
-            {override.properties.length === 0 ? 'No' : override.properties.length} properties overriden
+            匹配器 <Icon name="angle-right" /> {matcherUi.name} <br />
+            {override.properties.length === 0 ? '无' : override.properties.length} 个属性覆盖
           </div>
         )}
       </div>
@@ -165,7 +165,7 @@ export const OverrideEditor: React.FC<OverrideEditorProps> = ({
         {override.matcher.options && (
           <div className={styles.propertyPickerWrapper}>
             <ValuePicker
-              label="Add override property"
+              label="新增覆盖属性"
               variant="secondary"
               icon="plus"
               options={configPropertiesOptions}

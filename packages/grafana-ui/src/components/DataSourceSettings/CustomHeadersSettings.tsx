@@ -57,7 +57,7 @@ const CustomHeaderRow: React.FC<CustomHeaderRowProps> = ({ header, onBlur, onCha
   return (
     <div className={styles.layout}>
       <FormField
-        label="Header"
+        label="头部"
         name="name"
         placeholder="X-Custom-Header"
         labelWidth={5}
@@ -66,7 +66,7 @@ const CustomHeaderRow: React.FC<CustomHeaderRowProps> = ({ header, onBlur, onCha
         onBlur={onBlur}
       />
       <SecretFormField
-        label="Value"
+        label="值"
         name="value"
         isConfigured={header.configured}
         value={header.value}
@@ -185,7 +185,7 @@ export class CustomHeadersSettings extends PureComponent<Props, State> {
     return (
       <div className={'gf-form-group'}>
         <div className="gf-form">
-          <h6>Custom HTTP Headers</h6>
+          <h6>自定义 HTTP 头部</h6>
         </div>
         <div>
           {headers.map((header, i) => (
@@ -209,7 +209,7 @@ export class CustomHeadersSettings extends PureComponent<Props, State> {
               this.onHeaderAdd();
             }}
           >
-            Add header
+            创建头部信息
           </Button>
         </div>
       </div>

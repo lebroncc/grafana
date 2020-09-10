@@ -16,9 +16,9 @@ export class TextBoxVariableEditor extends PureComponent<Props> {
     const { query } = this.props.variable;
     return (
       <div className="gf-form-group">
-        <h5 className="section-heading">Text options</h5>
+        <h5 className="section-heading">文本选项</h5>
         <div className="gf-form">
-          <span className="gf-form-label">Default value</span>
+          <span className="gf-form-label">默认值</span>
           <input
             type="text"
             className="gf-form-input"

@@ -1,11 +1,11 @@
 <div class="gf-form-group">
   <div class="gf-form">
-    <h6>TLS Auth Details</h6>
+    <h6>TLS 授权详情</h6>
     <info-popover mode="header">TLS Certs are encrypted and stored in the Grafana database.</info-popover>
   </div>
   <div ng-if="current.jsonData.tlsAuthWithCACert">
     <div class="gf-form-inline">
-      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">CA Cert</label></div>
+      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">CA 证书</label></div>
       <div class="gf-form gf-form--grow" ng-if="!current.secureJsonFields.tlsCACert">
          <textarea
            rows="7"
@@ -24,7 +24,7 @@
 
   <div ng-if="current.jsonData.tlsAuth">
     <div class="gf-form-inline">
-      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">Client Cert</label></div>
+      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">客户端证书</label></div>
       <div class="gf-form gf-form--grow" ng-if="!current.secureJsonFields.tlsClientCert">
          <textarea
            rows="7"
@@ -43,7 +43,7 @@
     </div>
 
     <div class="gf-form-inline">
-      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">Client Key</label></div>
+      <div class="gf-form gf-form--v-stretch"><label class="gf-form-label width-7">客户端密钥</label></div>
       <div class="gf-form gf-form--grow" ng-if="!current.secureJsonFields.tlsClientKey">
          <textarea
            rows="7"

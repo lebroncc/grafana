@@ -29,7 +29,7 @@ export class PieChartOptionsBox extends PureComponent<PanelEditorProps<PieChartO
     return (
       <PanelOptionsGroup title="PieChart">
         <div className="gf-form">
-          <InlineFormLabel width={labelWidth}>Type</InlineFormLabel>
+          <InlineFormLabel width={labelWidth}>类型</InlineFormLabel>
           <Select
             width={12}
             options={pieChartOptions}
@@ -39,7 +39,7 @@ export class PieChartOptionsBox extends PureComponent<PanelEditorProps<PieChartO
         </div>
         <div className="gf-form">
           <FormField
-            label="Divider width"
+            label="分隔线宽度"
             labelWidth={labelWidth}
             onChange={this.onStrokeWidthChange}
             value={strokeWidth}

@@ -121,10 +121,10 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
     return (
       <>
         <div className="gf-form-group">
-          <h5 className="section-heading">Query Options</h5>
+          <h5 className="section-heading">查询选项</h5>
           <div className="gf-form-inline">
             <div className="gf-form max-width-21">
-              <span className="gf-form-label width-10">Data source</span>
+              <span className="gf-form-label width-10">数据源</span>
               <div className="gf-form-select-wrapper max-width-14">
                 <select
                   className="gf-form-input"
@@ -147,7 +147,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
             <div className="gf-form max-width-22">
               <InlineFormLabel width={10} tooltip={'When to update the values of this variable.'}>
-                Refresh
+                刷新
               </InlineFormLabel>
               <div className="gf-form-select-wrapper width-15">
                 <select
@@ -163,7 +163,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
                     On Dashboard Load
                   </option>
                   <option label="On Time Range Change" value={VariableRefresh.onTimeRangeChanged}>
-                    On Time Range Change
+                    On Time Range Chang
                   </option>
                 </select>
               </div>
@@ -184,7 +184,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
               width={10}
               tooltip={'Optional, if you want to extract part of a series name or metric node segment.'}
             >
-              Regex
+              正则
             </InlineFormLabel>
             <input
               type="text"
@@ -198,7 +198,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
           </div>
           <div className="gf-form max-width-21">
             <InlineFormLabel width={10} tooltip={'How to sort the values of this variable.'}>
-              Sort
+              排序
             </InlineFormLabel>
             <div className="gf-form-select-wrapper max-width-14">
               <select
@@ -246,12 +246,12 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
         />
 
         <div className="gf-form-group">
-          <h5>Value groups/tags (Experimental feature)</h5>
+          <h5>值 组/标签（实验特性）</h5>
           <div
             aria-label={selectors.pages.Dashboard.Settings.Variables.Edit.QueryVariable.valueGroupsTagsEnabledSwitch}
           >
             <Switch
-              label="Enabled"
+              label="是否启用"
               label-class="width-10"
               checked={this.props.variable.useTags}
               onChange={this.onUseTagsChange}
@@ -260,7 +260,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
           {this.props.variable.useTags && (
             <>
               <div className="gf-form last">
-                <span className="gf-form-label width-10">Tags query</span>
+                <span className="gf-form-label width-10">标签查询</span>
                 <input
                   type="text"
                   className="gf-form-input"
@@ -274,7 +274,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
                 />
               </div>
               <div className="gf-form">
-                <li className="gf-form-label width-10">Tag values query</li>
+                <li className="gf-form-label width-10">标签的值查询</li>
                 <input
                   type="text"
                   className="gf-form-input"

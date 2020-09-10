@@ -35,7 +35,7 @@ export const BasicAuthSettings: React.FC<HttpSettingsProps> = ({ dataSourceConfi
     <>
       <div className="gf-form">
         <FormField
-          label="User"
+          label="用户名"
           labelWidth={10}
           inputWidth={18}
           placeholder="user"

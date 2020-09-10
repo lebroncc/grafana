@@ -69,7 +69,7 @@ export class DataSourcesListPage extends PureComponent<Props> {
 
     const linkButton = {
       href: 'datasources/new',
-      title: 'Add data source',
+      title: '创建数据源',
     };
 
     return (

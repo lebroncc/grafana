@@ -86,7 +86,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
     >
       {({ register, control, errors, getValues }) => (
         <>
-          <Field label="Dashboard name" invalid={!!errors.title} error={errors.title?.message}>
+          <Field label="仪表盘名称" invalid={!!errors.title} error={errors.title?.message}>
             <Input
               name="title"
               ref={register({
@@ -96,7 +96,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
               autoFocus
             />
           </Field>
-          <Field label="Folder">
+          <Field label="文件夹">
             <InputControl
               as={FolderPicker}
               control={control}
@@ -108,15 +108,15 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
               useNewForms
             />
           </Field>
-          <Field label="Copy tags">
+          <Field label="复制标签">
             <Switch name="copyTags" ref={register} />
           </Field>
           <HorizontalGroup>
             <Button type="submit" aria-label="Save dashboard button">
-              Save
+              保存
             </Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              取消
             </Button>
           </HorizontalGroup>
         </>

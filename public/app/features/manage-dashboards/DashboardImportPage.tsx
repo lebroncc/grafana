@@ -81,26 +81,26 @@ class DashboardImportUnConnected extends PureComponent<Props> {
           <DashboardFileUpload onFileUpload={this.onFileUpload} />
         </div>
         <div className={styles.option}>
-          <Legend>Import via grafana.com</Legend>
+          <Legend>从 grafana.com 导入</Legend>
           <Form onSubmit={this.getGcomDashboard} defaultValues={{ gcomDashboard: '' }}>
             {({ register, errors }) => (
               <Field invalid={!!errors.gcomDashboard} error={errors.gcomDashboard && errors.gcomDashboard.message}>
                 <Input
                   name="gcomDashboard"
-                  placeholder="Grafana.com dashboard url or id"
+                  placeholder="Grafana.com 仪表盘 url 或者 id"
                   type="text"
                   ref={register({
-                    required: 'A Grafana dashboard url or id is required',
+                    required: '请输入 Grafana 仪表盘 url 或者 id',
                     validate: validateGcomDashboard,
                   })}
-                  addonAfter={<Button type="submit">Load</Button>}
+                  addonAfter={<Button type="submit">加载</Button>}
                 />
               </Field>
             )}
           </Form>
         </div>
         <div className={styles.option}>
-          <Legend>Import via panel json</Legend>
+          <Legend>通过面板 json 导入</Legend>
           <Form onSubmit={this.getDashboardFromJson} defaultValues={{ dashboardJson: '' }}>
             {({ register, errors }) => (
               <>
@@ -114,7 +114,7 @@ class DashboardImportUnConnected extends PureComponent<Props> {
                     rows={10}
                   />
                 </Field>
-                <Button type="submit">Load</Button>
+                <Button type="submit">加载</Button>
               </>
             )}
           </Form>

@@ -52,12 +52,12 @@
 
   <time-picker-settings getDashboard="ctrl.getDashboard" onTimeZoneChange="ctrl.onTimeZoneChange" onRefreshIntervalChange="ctrl.onRefreshIntervalChange" onNowDelayChange="ctrl.onNowDelayChange" onHideTimePickerChange="ctrl.onHideTimePickerChange"></time-picker-settings>
 
-  <h5 class="section-heading">Panel Options</h5>
+  <h5 class="section-heading">面板选项</h5>
   <div class="gf-form">
     <label class="gf-form-label width-11">
-      Graph Tooltip
+      图表提示
       <info-popover mode="right-normal">
-        Cycle between options using Shortcut: CTRL+O or CMD+O
+        使用快捷方式在选项之间循环：CTRL+O 或 CMD+O
       </info-popover>
     </label>
     <div class="gf-form-select-wrapper">
@@ -68,7 +68,7 @@
   <div class="gf-form-button-row">
     <button class="btn btn-danger" ng-click="ctrl.deleteDashboard()" ng-show="ctrl.canDelete"
       aria-label="Dashboard settings page delete dashboard button">
-      Delete Dashboard
+      删除仪表盘
     </button>
   </div>
 </div>
@@ -94,7 +94,7 @@
 </div>
 
 <div class="dashboard-settings__content" ng-if="ctrl.viewId === 'dashboard_json'">
-  <h3 class="dashboard-settings__header">JSON Model</h3>
+  <h3 class="dashboard-settings__header">JSON 模型</h3>
   <div class="dashboard-settings__subheader">
     The JSON Model below is data structure that defines the dashboard. Including settings, panel settings & layout,
     queries etc.
@@ -106,7 +106,7 @@
 
   <div class="gf-form-button-row">
     <button class="btn btn-primary" ng-click="ctrl.saveDashboardJson()" ng-show="ctrl.canSave">
-      Save Changes
+      保存修改
     </button>
   </div>
 </div>

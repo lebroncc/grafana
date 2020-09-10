@@ -25,7 +25,7 @@ export const DashboardFileUpload: FC<Props> = ({ onFileUpload }) => {
 
   return (
     <label className={style.button}>
-      Upload .json file
+      上传 .json 文件
       <input
         type="file"
         id="fileUpload"

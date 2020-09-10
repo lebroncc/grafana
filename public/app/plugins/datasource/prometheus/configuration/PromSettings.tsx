@@ -24,7 +24,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form">
             <FormField
-              label="Scrape interval"
+              label="抓取间隔"
               labelWidth={13}
               inputEl={
                 <Input
@@ -43,7 +43,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form">
             <FormField
-              label="Query timeout"
+              label="查询超时"
               labelWidth={13}
               inputEl={
                 <Input
@@ -64,7 +64,7 @@ export const PromSettings = (props: Props) => {
             width={13}
             tooltip="Specify the HTTP Method to query Prometheus. (POST is only available in Prometheus >= v2.1.0)"
           >
-            HTTP Method
+            HTTP 方法
           </InlineFormLabel>
           <Select
             options={httpOptions}
@@ -74,12 +74,12 @@ export const PromSettings = (props: Props) => {
           />
         </div>
       </div>
-      <h3 className="page-heading">Misc</h3>
+      <h3 className="page-heading">其他</h3>
       <div className="gf-form-group">
         <div className="gf-form">
           <Switch
             checked={options.jsonData.disableMetricsLookup}
-            label="Disable metrics lookup"
+            label="禁用指标查找"
             labelClass="width-14"
             onChange={onUpdateDatasourceJsonDataOptionChecked(props, 'disableMetricsLookup')}
             tooltip="Checking this option will disable the metrics chooser and metric/label support in the query field's autocomplete. This helps if you have performance issues with bigger Prometheus instances."
@@ -88,7 +88,7 @@ export const PromSettings = (props: Props) => {
         <div className="gf-form-inline">
           <div className="gf-form max-width-30">
             <FormField
-              label="Custom query parameters"
+              label="自定义查询参数"
               labelWidth={14}
               tooltip="Add Custom parameters to Prometheus or Thanos queries."
               inputEl={

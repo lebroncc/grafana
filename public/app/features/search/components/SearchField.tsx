@@ -62,7 +62,6 @@ export const SearchField: FC<SearchFieldProps> = ({ query, onChange, size, clear
 
   return (
     <div className={cx(styles.wrapper, className)}>
-      {/* Search dashboards by name */}
       <input
         type="text"
         placeholder="通过名称查询仪表盘"

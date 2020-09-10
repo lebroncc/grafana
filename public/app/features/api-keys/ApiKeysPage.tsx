@@ -157,12 +157,12 @@ export class ApiKeysPage extends PureComponent<Props, any> {
       <>
         {!isAdding && (
           <EmptyListCTA
-            title="You haven't added any API Keys yet."
+            title="尚未创建任何 API 密钥"
             buttonIcon="key-skeleton-alt"
             buttonLink="#"
             onClick={this.onToggleAdding}
-            buttonTitle=" New API Key"
-            proTip="Remember you can provide view-only API access to other applications."
+            buttonTitle="创建 API 密钥"
+            proTip="可以为其他应用程序提供仅可查看的 API 访问."
           />
         )}
         {this.renderAddApiKeyForm()}
@@ -185,21 +185,21 @@ export class ApiKeysPage extends PureComponent<Props, any> {
       <SlideDown in={isAdding}>
         <div className="cta-form">
           <IconButton name="times" className="cta-form__close btn btn-transparent" onClick={this.onToggleAdding} />
-          <h5>Add API Key</h5>
+          <h5>创建 API 密钥</h5>
           <form className="gf-form-group" onSubmit={this.onAddApiKey}>
             <div className="gf-form-inline">
               <div className="gf-form max-width-21">
-                <span className="gf-form-label">Key name</span>
+                <span className="gf-form-label">密钥名称</span>
                 <Input
                   type="text"
                   className="gf-form-input"
                   value={newApiKey.name}
-                  placeholder="Name"
+                  placeholder="名称"
                   onChange={evt => this.onApiKeyStateUpdate(evt, ApiKeyStateProps.Name)}
                 />
               </div>
               <div className="gf-form">
-                <span className="gf-form-label">Role</span>
+                <span className="gf-form-label">角色</span>
                 <span className="gf-form-select-wrapper">
                   <select
                     className="gf-form-input gf-size-auto"
@@ -217,7 +217,7 @@ export class ApiKeysPage extends PureComponent<Props, any> {
                 </span>
               </div>
               <div className="gf-form max-width-21">
-                <InlineFormLabel tooltip={tooltipText}>Time to live</InlineFormLabel>
+                <InlineFormLabel tooltip={tooltipText}>存活时间</InlineFormLabel>
                 <Input
                   type="text"
                   className="gf-form-input"
@@ -228,7 +228,7 @@ export class ApiKeysPage extends PureComponent<Props, any> {
                 />
               </div>
               <div className="gf-form">
-                <button className="btn gf-form-btn btn-primary">Add</button>
+                <button className="btn gf-form-btn btn-primary">创建</button>
               </div>
             </div>
           </form>

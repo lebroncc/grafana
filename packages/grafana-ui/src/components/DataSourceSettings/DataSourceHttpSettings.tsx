@@ -132,14 +132,14 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
             <>
               <div className="gf-form-inline">
                 <div className="gf-form">
-                  <FormField label="Access" labelWidth={11} inputWidth={20} inputEl={accessSelect} />
+                  <FormField label="访问方式" labelWidth={11} inputWidth={20} inputEl={accessSelect} />
                 </div>
                 <div className="gf-form">
                   <label
                     className="gf-form-label query-keyword pointer"
                     onClick={() => setIsAccessHelpVisible(isVisible => !isVisible)}
                   >
-                    Help&nbsp;
+                    帮助&nbsp;
                     <Icon name={isAccessHelpVisible ? 'angle-down' : 'angle-right'} style={{ marginBottom: 0 }} />
                   </label>
                 </div>
@@ -153,7 +153,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
                 width={11}
                 tooltip="Grafana Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
               >
-                Whitelisted Cookies
+                Cookies 白名单
               </FormLabel>
               <TagsInput
                 tags={dataSourceConfig.jsonData.keepCookies}
@@ -168,11 +168,11 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
       </>
 
       <>
-        <h3 className="page-heading">Auth</h3>
+        <h3 className="page-heading">授权</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
             <Switch
-              label="Basic auth"
+              label="基本授权"
               labelClass="width-13"
               checked={dataSourceConfig.basicAuth}
               onChange={event => {
@@ -180,7 +180,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
               }}
             />
             <Switch
-              label="With Credentials"
+              label="是否有证书"
               labelClass="width-13"
               checked={dataSourceConfig.withCredentials}
               onChange={event => {
@@ -199,7 +199,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
         </div>
         {dataSourceConfig.basicAuth && (
           <>
-            <h6>Basic Auth Details</h6>
+            <h6>基本认证详情</h6>
             <div className="gf-form-group">
               <BasicAuthSettings {...props} />
             </div>

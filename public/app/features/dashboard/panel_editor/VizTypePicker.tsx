@@ -14,9 +14,12 @@ export interface Props {
 }
 
 export function getAllPanelPluginMeta(): PanelPluginMeta[] {
-  const allPanels = config.panels;
+  let allPanels = config.panels;
+  // TODO: 刷选面板组件
+  let includePanel = ['graph', 'stat', 'gauge', 'bargauge', 'table', 'grafana-piechart-panel'];
 
   return Object.keys(allPanels)
+    .filter(key => includePanel.includes(key))
     .filter(key => allPanels[key]['hideFromList'] === false)
     .map(key => allPanels[key])
     .sort((a: PanelPluginMeta, b: PanelPluginMeta) => a.sort - b.sort);
@@ -94,7 +97,7 @@ export const VizTypePicker: React.FC<Props> = ({ searchQuery, onTypeChange, curr
           return renderVizPlugin(plugin, index);
         })
       ) : (
-        <EmptySearchResult>Could not find anything matching your query</EmptySearchResult>
+        <EmptySearchResult>筛选结果为空</EmptySearchResult>
       )}
     </div>
   );

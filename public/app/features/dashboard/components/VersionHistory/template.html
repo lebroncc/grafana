@@ -1,5 +1,5 @@
 <h3 class="dashboard-settings__header">
-  <a ng-click="ctrl.switchMode('list')">Versions</a>
+  <a ng-click="ctrl.switchMode('list')">历史版本</a>
   <span ng-show="ctrl.mode === 'compare'">
     <icon name="'angle-right'"></icon> Comparing {{ctrl.baseInfo.version}}
     <icon name="'arrows-h'"></icon>
@@ -11,7 +11,7 @@
 <div ng-if="ctrl.mode === 'list'">
   <div ng-if="ctrl.loading">
     <icon name="'fa fa-spinner'" class="fa-spin"></icon>
-    <em>Fetching history list&hellip;</em>
+    <em>加载历史版本列表&hellip;</em>
   </div>
 
   <div ng-if="!ctrl.loading">
@@ -20,10 +20,10 @@
         <thead>
           <tr>
             <th class="width-4"></th>
-            <th class="width-4">Version</th>
-            <th class="width-14">Date</th>
-            <th class="width-10">Updated By</th>
-            <th>Notes</th>
+            <th class="width-4">版本号</th>
+            <th class="width-14">日期</th>
+            <th class="width-10">更新时间</th>
+            <th>备注</th>
             <th></th>
           </tr>
         </thead>
@@ -87,7 +87,7 @@
             bs-tooltip="ctrl.canCompare ? '' : 'Select 2 versions to start comparing'"
             data-placement="bottom"
           >
-            <icon name="'code-branch'"></icon>&nbsp;&nbsp;Compare versions
+            <icon name="'code-branch'"></icon>&nbsp;&nbsp;比较历史版本
           </button>
         </div>
       </div>

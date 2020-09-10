@@ -38,12 +38,12 @@ export function addStandardDataReduceOptions(
 ) {
   builder.addRadio({
     path: 'reduceOptions.values',
-    name: 'Show',
-    description: 'Calculate a single value per column or series or show each row',
+    name: '展示',
+    description: '为一列、序列、展示的每一行计算一个值',
     settings: {
       options: [
-        { value: false, label: 'Calculate' },
-        { value: true, label: 'All values' },
+        { value: false, label: '计算' },
+        { value: true, label: '所有值' },
       ],
     },
     defaultValue: false,
@@ -65,8 +65,9 @@ export function addStandardDataReduceOptions(
   builder.addCustomEditor({
     id: 'reduceOptions.calcs',
     path: 'reduceOptions.calcs',
-    name: 'Value',
-    description: 'Choose a reducer function / calculation',
+    name: '值',
+    // description: 'Choose a reducer function / calculation',
+    description: '选择一个计算方法',
     editor: standardEditorsRegistry.get('stats-picker').editor as any,
     defaultValue: [ReducerID.mean],
     // Hides it when all values mode is on
@@ -76,8 +77,8 @@ export function addStandardDataReduceOptions(
   if (includeFieldMatcher) {
     builder.addSelect({
       path: 'reduceOptions.fields',
-      name: 'Fields',
-      description: 'Select the fields that should be included in the panel',
+      name: '字段',
+      description: '选择应包含在面板中的字段',
       settings: {
         allowCustomValue: true,
         options: [],
@@ -105,13 +106,13 @@ export function addStandardDataReduceOptions(
   if (includeOrientation) {
     builder.addRadio({
       path: 'orientation',
-      name: 'Orientation',
-      description: 'Stacking direction in case of multiple series or fields',
+      name: '方向',
+      description: '多个序列或字段的叠加方向',
       settings: {
         options: [
-          { value: 'auto', label: 'Auto' },
-          { value: 'horizontal', label: 'Horizontal' },
-          { value: 'vertical', label: 'Vertical' },
+          { value: 'auto', label: '自适应' },
+          { value: 'horizontal', label: '水平' },
+          { value: 'vertical', label: '垂直' },
         ],
       },
       defaultValue: 'auto',

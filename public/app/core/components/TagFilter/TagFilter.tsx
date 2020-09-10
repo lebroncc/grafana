@@ -34,7 +34,7 @@ export const TagFilter: FC<Props> = ({
   hideValues,
   isClearable,
   onChange,
-  placeholder = 'Filter by tag',
+  placeholder = '通过标签筛选',
   tagOptions,
   tags,
   width,

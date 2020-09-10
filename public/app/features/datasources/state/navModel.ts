@@ -8,16 +8,16 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
   const navModel = {
     img: pluginMeta.info.logos.large,
     id: 'datasource-' + dataSource.id,
-    subTitle: `Type: ${pluginMeta.name}`,
+    subTitle: `类型：${pluginMeta.name}`,
     url: '',
     text: dataSource.name,
-    breadcrumbs: [{ title: 'Data Sources', url: 'datasources' }],
+    breadcrumbs: [{ title: '数据源', url: 'datasources' }],
     children: [
       {
         active: false,
         icon: 'sliders-v-alt',
         id: `datasource-settings-${dataSource.id}`,
-        text: 'Settings',
+        text: '设置',
         url: `datasources/edit/${dataSource.id}/`,
       },
     ],
@@ -40,7 +40,7 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
       active: false,
       icon: 'apps',
       id: `datasource-dashboards-${dataSource.id}`,
-      text: 'Dashboards',
+      text: '仪表盘',
       url: `datasources/edit/${dataSource.id}/dashboards`,
     });
   }

@@ -26,9 +26,9 @@ export class AnnotationsEditorCtrl {
   };
 
   emptyListCta = {
-    title: 'There are no custom annotation queries added yet',
+    title: '尚未创建自定义注解',
     buttonIcon: 'comment-alt',
-    buttonTitle: 'Add Annotation Query',
+    buttonTitle: '创建自定义注解',
     infoBox: {
       __html: `<p>Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines
     and icons on all graph panels. When you hover over an annotation icon you can get event text &amp; tags for
@@ -41,7 +41,7 @@ export class AnnotationsEditorCtrl {
   >
   for more information.`,
     },
-    infoBoxTitle: 'What are annotations?',
+    infoBoxTitle: '什么是注解?',
   };
 
   showOptions: any = [
