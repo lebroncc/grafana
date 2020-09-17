@@ -1,14 +1,16 @@
 import { updateLocation } from 'app/core/actions';
 import { store } from 'app/store/store';
-import { AngularComponent, getDataSourceSrv, getLocationSrv } from '@grafana/runtime';
+// import { AngularComponent, getDataSourceSrv, getLocationSrv } from '@grafana/runtime';
+import { AngularComponent, getLocationSrv } from '@grafana/runtime';
 import { PanelMenuItem } from '@grafana/data';
-import { copyPanel, duplicatePanel, removePanel, sharePanel } from 'app/features/dashboard/utils/panel';
+// import { copyPanel, duplicatePanel, removePanel, sharePanel } from 'app/features/dashboard/utils/panel';
+import { copyPanel, duplicatePanel, removePanel } from 'app/features/dashboard/utils/panel';
 import { PanelModel } from 'app/features/dashboard/state/PanelModel';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
 import { contextSrv } from '../../../core/services/context_srv';
-import { navigateToExplore } from '../../explore/state/actions';
-import { getExploreUrl } from '../../../core/utils/explore';
-import { getTimeSrv } from '../services/TimeSrv';
+// import { navigateToExplore } from '../../explore/state/actions';
+// import { getExploreUrl } from '../../../core/utils/explore';
+// import { getTimeSrv } from '../services/TimeSrv';
 import { PanelCtrl } from '../../panel/panel_ctrl';
 
 export function getPanelMenu(
@@ -40,10 +42,10 @@ export function getPanelMenu(
     );
   };
 
-  const onSharePanel = (event: React.MouseEvent<any>) => {
-    event.preventDefault();
-    sharePanel(dashboard, panel);
-  };
+  // const onSharePanel = (event: React.MouseEvent<any>) => {
+  //   event.preventDefault();
+  //   sharePanel(dashboard, panel);
+  // };
 
   const onInspectPanel = (tab?: string) => {
     event.preventDefault();
@@ -76,11 +78,11 @@ export function getPanelMenu(
     removePanel(dashboard, panel, true);
   };
 
-  const onNavigateToExplore = (event: React.MouseEvent<any>) => {
-    event.preventDefault();
-    const openInNewWindow = event.ctrlKey || event.metaKey ? (url: string) => window.open(url) : undefined;
-    store.dispatch(navigateToExplore(panel, { getDataSourceSrv, getTimeSrv, getExploreUrl, openInNewWindow }) as any);
-  };
+  // const onNavigateToExplore = (event: React.MouseEvent<any>) => {
+  //   event.preventDefault();
+  //   const openInNewWindow = event.ctrlKey || event.metaKey ? (url: string) => window.open(url) : undefined;
+  //   store.dispatch(navigateToExplore(panel, { getDataSourceSrv, getTimeSrv, getExploreUrl, openInNewWindow }) as any);
+  // };
 
   const menu: PanelMenuItem[] = [];
 
@@ -102,20 +104,20 @@ export function getPanelMenu(
     });
   }
 
-  menu.push({
-    text: '分享',
-    iconClassName: 'share-alt',
-    onClick: onSharePanel,
-    shortcut: 'p s',
-  });
+  // menu.push({
+  //   text: '分享',
+  //   iconClassName: 'share-alt',
+  //   onClick: onSharePanel,
+  //   shortcut: 'p s',
+  // });
 
   if (contextSrv.hasAccessToExplore() && !(panel.plugin && panel.plugin.meta.skipDataQuery)) {
-    menu.push({
-      text: '探索',
-      iconClassName: 'compass',
-      shortcut: 'x',
-      onClick: onNavigateToExplore,
-    });
+    // menu.push({
+    //   text: '探索',
+    //   iconClassName: 'compass',
+    //   shortcut: 'x',
+    //   onClick: onNavigateToExplore,
+    // });
   }
 
   const inspectMenu: PanelMenuItem[] = [];

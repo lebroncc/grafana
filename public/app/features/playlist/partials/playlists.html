@@ -21,25 +21,25 @@
         </td>
         <td class="dropdown">
           <button class="btn btn-inverse btn-small" data-toggle="dropdown">
-            Start playlist
+            开始播放
             <icon name="'angle-down'"></icon>
           </button>
           <ul class="dropdown-menu" role="menu">
             <li>
               <a href="{{playlist.startUrl}}">
-                <icon name="'play'"></icon> In Normal mode</span>
+                <icon name="'play'"></icon> 常规模式</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk=tv">
-                <icon name="'play'"></icon> In TV mode</span>
+                <icon name="'play'"></icon> TV 模式</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk=tv&autofitpanels">
-                <icon name="'play'"></icon> In TV mode <span class="muted">(with auto fit panels)</span>
+                <icon name="'play'"></icon> TV 模式 <span class="muted">(自适应面板)</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk">
-                <icon name="'play'"></icon> In Kiosk mode</span>
+                <icon name="'play'"></icon> Kiosk 模式</span>
               </a>
               <a ng-href="{{playlist.startUrl}}?kiosk&autofitpanels">
-                <icon name="'play'"></icon> In Kiosk mode <span class="muted">(with auto fit panels)</span>
+                <icon name="'play'"></icon> Kiosk 模式 <span class="muted">(自适应面板)</span>
               </a>
             </li>
           </ul>

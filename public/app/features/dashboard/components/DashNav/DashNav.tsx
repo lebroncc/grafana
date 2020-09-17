@@ -16,7 +16,7 @@ import { updateLocation } from 'app/core/actions';
 // Types
 import { DashboardModel } from '../../state';
 import { CoreEvents, StoreState } from 'app/types';
-import { ShareModal } from 'app/features/dashboard/components/ShareModal';
+// import { ShareModal } from 'app/features/dashboard/components/ShareModal';
 import { SaveDashboardModalProxy } from 'app/features/dashboard/components/SaveDashboard/SaveDashboardModalProxy';
 
 export interface OwnProps {
@@ -46,6 +46,7 @@ export function addCustomRightAction(content: DashNavButtonModel) {
 
 export interface StateProps {
   location: any;
+  userInfo: any;
 }
 
 type Props = StateProps & OwnProps;
@@ -123,10 +124,11 @@ class DashNav extends PureComponent<Props> {
 
   renderLeftActionsButton() {
     const { dashboard } = this.props;
-    const { canStar, canShare, isStarred } = dashboard.meta;
+    // const { canStar, canShare, isStarred } = dashboard.meta;
+    const { canEdit, canStar, isStarred } = dashboard.meta;
 
     const buttons: ReactNode[] = [];
-    if (canStar) {
+    if (canEdit && canStar) {
       buttons.push(
         <DashNavButton
           tooltip="收藏"
@@ -141,27 +143,27 @@ class DashNav extends PureComponent<Props> {
       );
     }
 
-    if (canShare) {
-      buttons.push(
-        <ModalsController key="button-share">
-          {({ showModal, hideModal }) => (
-            <DashNavButton
-              tooltip="分享"
-              classSuffix="share"
-              icon="share-alt"
-              iconSize="lg"
-              noBorder={true}
-              onClick={() => {
-                showModal(ShareModal, {
-                  dashboard,
-                  onDismiss: hideModal,
-                });
-              }}
-            />
-          )}
-        </ModalsController>
-      );
-    }
+    // if (canShare) {
+    //   buttons.push(
+    //     <ModalsController key="button-share">
+    //       {({ showModal, hideModal }) => (
+    //         <DashNavButton
+    //           tooltip="分享"
+    //           classSuffix="share"
+    //           icon="share-alt"
+    //           iconSize="lg"
+    //           noBorder={true}
+    //           onClick={() => {
+    //             showModal(ShareModal, {
+    //               dashboard,
+    //               onDismiss: hideModal,
+    //             });
+    //           }}
+    //         />
+    //       )}
+    //     </ModalsController>
+    //   );
+    // }
 
     this.addCustomContent(customLeftActions, buttons);
     return buttons;
@@ -180,12 +182,13 @@ class DashNav extends PureComponent<Props> {
 
     const folderTitle = dashboard.meta.folderTitle;
     const haveFolder = dashboard.meta.folderId > 0;
+    const canEdit = dashboard.meta.canEdit;
 
     return (
       <>
         <div>
           <div className="navbar-page-btn">
-            {!isFullscreen && <Icon name="apps" size="lg" className={mainIconClassName} />}
+            {canEdit && !isFullscreen && <Icon name="apps" size="lg" className={mainIconClassName} />}
             {haveFolder && (
               <>
                 <a className="navbar-page-btn__folder" onClick={this.onFolderNameClick}>
@@ -279,6 +282,7 @@ class DashNav extends PureComponent<Props> {
 
   render() {
     const { dashboard, location, isFullscreen } = this.props;
+    const { canEdit } = dashboard.meta;
 
     return (
       <div className="navbar">
@@ -288,33 +292,25 @@ class DashNav extends PureComponent<Props> {
         {this.playlistSrv.isPlaying && (
           <div className="navbar-buttons navbar-buttons--playlist">
             <DashNavButton
-              tooltip="Go to previous dashboard"
+              tooltip="上一个仪表盘"
               classSuffix="tight"
               icon="step-backward"
               onClick={this.onPlaylistPrev}
             />
-            <DashNavButton
-              tooltip="Stop playlist"
-              classSuffix="tight"
-              icon="square-shape"
-              onClick={this.onPlaylistStop}
-            />
-            <DashNavButton
-              tooltip="Go to next dashboard"
-              classSuffix="tight"
-              icon="forward"
-              onClick={this.onPlaylistNext}
-            />
+            <DashNavButton tooltip="停止播放" classSuffix="tight" icon="square-shape" onClick={this.onPlaylistStop} />
+            <DashNavButton tooltip="下一个仪表盘" classSuffix="tight" icon="forward" onClick={this.onPlaylistNext} />
           </div>
         )}
 
         <div className="navbar-buttons navbar-buttons--actions">{this.renderRightActionsButton()}</div>
 
-        <div className="navbar-buttons navbar-buttons--tv">
-          <DashNavButton tooltip="循环视图模式" classSuffix="tv" icon="monitor" onClick={this.onToggleTVMode} />
-        </div>
+        {canEdit && (
+          <div className="navbar-buttons navbar-buttons--tv">
+            <DashNavButton tooltip="循环视图模式" classSuffix="tv" icon="monitor" onClick={this.onToggleTVMode} />
+          </div>
+        )}
 
-        {!dashboard.timepicker.hidden && (
+        {canEdit && !dashboard.timepicker.hidden && (
           <div className="navbar-buttons">
             <DashNavTimeControls dashboard={dashboard} location={location} updateLocation={updateLocation} />
           </div>
@@ -326,6 +322,7 @@ class DashNav extends PureComponent<Props> {
 
 const mapStateToProps = (state: StoreState) => ({
   location: state.location,
+  userInfo: state.userAdmin.user,
 });
 
 const mapDispatchToProps = {

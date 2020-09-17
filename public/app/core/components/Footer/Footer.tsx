@@ -61,7 +61,8 @@ export function setVersionLinkFn(fn: typeof getFooterLinks) {
 }
 
 export const Footer: FC = React.memo(() => {
-  const links = getFooterLinks().concat(getVersionLinks());
+  // const links = getFooterLinks().concat(getVersionLinks());
+  const links: FooterLink[] = [];
 
   return (
     <footer className="footer">

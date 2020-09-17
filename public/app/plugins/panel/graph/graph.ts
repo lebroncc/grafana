@@ -200,7 +200,7 @@ class GraphElement {
         {
           items: [
             {
-              label: 'Add annotation',
+              label: '添加注解',
               icon: 'comment-alt',
               onClick: () => this.eventManager.updateTime({ from: flotPosition.x, to: null }),
             },

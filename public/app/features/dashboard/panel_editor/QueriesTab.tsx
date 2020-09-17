@@ -310,7 +310,7 @@ export class QueriesTab extends PureComponent<Props, State> {
             variant="secondary"
             aria-label={selectors.components.QueryTab.addQuery}
           >
-            查询
+            新增查询
           </Button>
         )}
         {isAddingMixed && this.renderMixedPicker()}
