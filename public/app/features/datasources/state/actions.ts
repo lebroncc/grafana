@@ -157,8 +157,8 @@ export function loadDataSourcePlugins(): ThunkResult<void> {
 
     // TODO: 过滤数据源插件
     // Prometheus Elasticsearch MySQL grafana-dm7
-    let includePluginList = ['Prometheus', 'Elasticsearch', 'MySQL', 'grafana-dm7'];
-    plugins = plugins.filter((item: any) => includePluginList.includes(item.name));
+    // let includePluginList = ['Prometheus', 'Elasticsearch', 'MySQL', 'grafana-dm7'];
+    // plugins = plugins.filter((item: any) => includePluginList.includes(item.name));
 
     let categories = buildCategories(plugins);
 

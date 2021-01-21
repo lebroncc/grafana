@@ -16,10 +16,10 @@ export interface Props {
 export function getAllPanelPluginMeta(): PanelPluginMeta[] {
   let allPanels = config.panels;
   // TODO: 刷选面板组件
-  let includePanel = ['graph', 'stat', 'gauge', 'bargauge', 'table', 'grafana-piechart-panel'];
+  // let includePanel = ['graph', 'stat', 'gauge', 'bargauge', 'table', 'grafana-piechart-panel'];
+  //   .filter(key => includePanel.includes(key))
 
   return Object.keys(allPanels)
-    .filter(key => includePanel.includes(key))
     .filter(key => allPanels[key]['hideFromList'] === false)
     .map(key => allPanels[key])
     .sort((a: PanelPluginMeta, b: PanelPluginMeta) => a.sort - b.sort);

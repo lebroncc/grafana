@@ -9,8 +9,8 @@ export function loadPlugins(): ThunkResult<void> {
     let result = await getBackendSrv().get('api/plugins', { embedded: 0 });
 
     // TODO: 过滤数据源插件
-    let includePluginList = ['Prometheus', 'Elasticsearch', 'MySQL', 'grafana-dm7'];
-    result = result.filter((item: any) => includePluginList.includes(item.name));
+    // let includePluginList = ['Prometheus', 'Elasticsearch', 'MySQL', 'grafana-dm7'];
+    // result = result.filter((item: any) => includePluginList.includes(item.name));
     dispatch(pluginsLoaded(result));
   };
 }
