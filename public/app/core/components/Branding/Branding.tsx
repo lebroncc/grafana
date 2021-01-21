@@ -39,7 +39,7 @@ export class Branding {
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static LoginTitle = '欢迎来到 Grafana';
   static GetLoginSubTitle = () => {
     const slogans = [
       "Don't get in the way of the data",

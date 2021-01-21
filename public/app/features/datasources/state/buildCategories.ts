@@ -30,7 +30,8 @@ export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePlug
     // Fix link name
     if (plugin.info.links) {
       for (const link of plugin.info.links) {
-        link.name = 'Learn more';
+        // link.name = 'Learn more';
+        link.name = '学习更多';
       }
     }
 

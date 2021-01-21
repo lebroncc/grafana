@@ -35,30 +35,30 @@ export const LoginForm: FC<Props> = ({ displayForgotPassword, onSubmit, isLoggin
       <Form onSubmit={onSubmit} validateOn="onChange">
         {({ register, errors }) => (
           <>
-            <Field label="Email or username" invalid={!!errors.user} error={errors.user?.message}>
+            <Field label="邮件/用户名" invalid={!!errors.user} error={errors.user?.message}>
               <Input
                 autoFocus
                 name="user"
-                ref={register({ required: 'Email or username is required' })}
+                ref={register({ required: '请输入邮件/用户名' })}
                 placeholder={loginHint}
                 aria-label={selectors.pages.Login.username}
               />
             </Field>
-            <Field label="Password" invalid={!!errors.password} error={errors.password?.message}>
+            <Field label="密码" invalid={!!errors.password} error={errors.password?.message}>
               <Input
                 name="password"
                 type="password"
                 placeholder={passwordHint}
-                ref={register({ required: 'Password is requireed' })}
+                ref={register({ required: '请输入密码' })}
                 aria-label={selectors.pages.Login.password}
               />
             </Field>
             <Button aria-label={selectors.pages.Login.submit} className={submitButton} disabled={isLoggingIn}>
-              {isLoggingIn ? 'Logging in...' : 'Log in'}
+              {isLoggingIn ? '登陆中...' : '登陆'}
             </Button>
             {displayForgotPassword && (
               <a className={forgottenPasswordStyles} href="user/password/send-reset-email">
-                Forgot your password?
+                忘记密码?
               </a>
             )}
           </>

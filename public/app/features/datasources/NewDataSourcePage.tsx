@@ -143,7 +143,7 @@ const DataSourceTypeCard: FC<DataSourceTypeCardProps> = props => {
               {learnMoreLink.name}
             </LinkButton>
           )}
-          {!isPhantom && <Button>Select</Button>}
+          {!isPhantom && <Button>选择</Button>}
         </>
       }
       labels={
